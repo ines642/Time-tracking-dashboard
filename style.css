@@ -1,0 +1,158 @@
+:root{
+  --Blue: hsl(246, 80%, 60%);
+  --Lred-work: hsl(15, 100%, 70%);
+--sblue-play: hsl(195, 74%, 62%);
+--lred-study: hsl(348, 100%, 68%);
+--lgreen-exercise: hsl(145, 58%, 55%);
+--v-social: hsl(264, 64%, 52%);
+--so-selfCare: hsl(43, 84%, 65%);
+
+--Vdarkblue: hsl(226, 43%, 10%);
+--Darkblue: hsl(235, 46%, 20%);
+--dblue: hsl(235, 45%, 61%);
+--pblue: hsl(236, 100%, 87%;)
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+}
+body{
+  height: 100vh;
+  width:100%;
+  /*background: var(--Vdarkblue);*/
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  color:#ffffff ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  height:60vh;
+  width: 80%;
+  background: white;
+  display: grid;
+  grid-template:50% 50% / repeat(4 , 25%) ;
+  gap: 10px;
+}
+.container > div{
+  border: solid;
+  border-radius: 1rem;
+
+ 
+}
+.icon{
+  height: 22%;
+  width: auto;
+ float: right;
+position: relative;
+right: 3%;
+}
+.content{
+  width: 100%;
+height: 70%;
+background: var(--Darkblue);
+border-radius: 0.85rem;
+position: relative;
+top: 10%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+padding: 8%;
+
+}
+.titel{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+font-size: 0.8rem;
+font-weight: 700;
+}
+.duration{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.previous{
+  color: rgb(70 73 128);
+  font-size: 0.7rem;
+}
+.reportFor{
+  
+  grid-row: 1/3;
+  
+}
+.reportFor >.profile{
+height: 70%;
+background: var(--Blue);
+position: relative;
+margin-bottom: 0;
+border-radius: 0.85rem;
+z-index: 1;
+padding: 8%;
+display: flex ;
+flex-direction: column;
+justify-content: space-around;
+}
+.pictur{
+  width: 4rem;
+  height: 4rem;
+  border: solid #ffffff;
+  border-radius: 50%;
+
+}
+.name{
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+.for{
+  font-size: 0.65rem;
+  opacity: 0.5;
+}
+.reportFor >.content{
+  height: 40%;
+  top: -10%;
+  display: flex;
+justify-content: flex-end;
+}
+.exotime{
+  height: 80%;
+  font-size: 0.8rem;
+  font-weight: 100;
+  display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+.monthly , .daily{
+color: var(--dblue);
+}
+.daily , .weekly , .monthly , .add:hover{
+  cursor: pointer;
+}
+.work{
+  background: var(--Lred-work);
+}
+.play{
+    background: var(--sblue-play);
+}
+.study{
+  background: var(--lred-study);
+}
+.exercise{
+  background: var(--lgreen-exercise);
+}
+.social{
+  background: var(--v-social);
+}
+.sc{
+  background: var(--so-selfCare);
+}
+@media screen and (max-width:500px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+
+  }
+ 
+
+}

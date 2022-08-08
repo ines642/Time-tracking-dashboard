@@ -74,9 +74,10 @@ font-weight: 700;
   font-weight: 400;
 }
 .previous{
-  color: rgb(70 73 128);
+  
   font-size: 0.7rem;
 }
+
 .reportFor{
   
   grid-row: 1/3;

@@ -1,14 +1,18 @@
 const add =document.querySelectorAll('.add')
 const dur =document.querySelectorAll('.duration')
+const preh =document.querySelectorAll('.prehours')
 const pre =document.querySelectorAll('.previous')
+const sel =document.querySelectorAll('.selection')
 const d =document.querySelector('.daily')
 const w =document.querySelector('.weekly')
 const m =document.querySelector('.monthly')
-const preh =document.querySelectorAll('.prehours')
+const s1 =document.querySelector('.s1')
+const s2 =document.querySelector('.s2')
+const s3 =document.querySelector('.s3')
 //confirm selection
 console.log(d ,m , w );
 for (let i = 0; i < add.length; i++) {
-    console.log(add[i] , dur[i] , pre[i] ,preh[i]);
+    console.log(add[i] , dur[i] , pre[i] ,preh[i] ,sel[i]);
 }
 // change pre and der based on time clicked
 /*1st way :
@@ -47,3 +51,23 @@ w.addEventListener('click' , ()=>{
             
         }
         })+'hrs'
+        for (let e = 0 ; e< pre.length ; e++) {
+           add[e].addEventListener('click', ()=>{
+console.log(e)
+sel[e].style.display='block'
+
+s1.addEventListener('click',()=>{
+    console.log(e);
+    dur[e].innerText=day[e]+'hrs'
+    pre[e].innerText='Last day '+ preday[e] +'hrs'
+})
+s2.addEventListener('click',()=>{
+    dur[e].innerText=week[e]+'hrs'
+    pre[e].innerText='Last week '+ preweek[e]+'hrs'
+})
+s3.addEventListener('click',()=>{
+    dur[e].innerText=month[e]+'hrs'
+    pre[e].innerText='Last month '+ premonth[e]+'hrs'
+})
+           })
+        }

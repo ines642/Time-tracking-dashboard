@@ -3,12 +3,13 @@ const dur =document.querySelectorAll('.duration')
 const preh =document.querySelectorAll('.prehours')
 const pre =document.querySelectorAll('.previous')
 const sel =document.querySelectorAll('.selection')
+const s1 =document.querySelectorAll('.s1')
+const s2 =document.querySelectorAll('.s2')
+const s3 =document.querySelectorAll('.s3')
+const exotime =document.querySelector('.exotime')
 const d =document.querySelector('.daily')
 const w =document.querySelector('.weekly')
 const m =document.querySelector('.monthly')
-const s1 =document.querySelector('.s1')
-const s2 =document.querySelector('.s2')
-const s3 =document.querySelector('.s3')
 //confirm selection
 console.log(d ,m , w );
 for (let i = 0; i < add.length; i++) {
@@ -28,6 +29,9 @@ let month=[103 , 23 , 13 , 11 , 21 ,7]
 let premonth=[128,29,19,18,23,11]
 
 d.addEventListener('click' , ()=>{
+    w.style.color='var(--dblue)'
+    d.style.color='white'
+    m.style.color='var(--dblue)'
 for (let e = 0 ; e< pre.length ; e++) {
     console.log(e);
     dur[e].innerText=day[e]+'hrs'
@@ -36,6 +40,9 @@ for (let e = 0 ; e< pre.length ; e++) {
 }
 })
 w.addEventListener('click' , ()=>{
+    w.style.color='white'
+    d.style.color='var(--dblue)'
+    m.style.color='var(--dblue)'
     for (let e = 0 ; e< pre.length ; e++) {
         console.log(e);
         dur[e].innerText=week[e]+'hrs'
@@ -44,6 +51,9 @@ w.addEventListener('click' , ()=>{
     }
     })
     m.addEventListener('click' , ()=>{
+        w.style.color='var(--dblue)'
+        d.style.color='var(--dblue)'
+        m.style.color='white'
         for (let e = 0 ; e< pre.length ; e++) {
             console.log(e);
             dur[e].innerText=month[e]+'hrs'
@@ -52,22 +62,29 @@ w.addEventListener('click' , ()=>{
         }
         })+'hrs'
         for (let e = 0 ; e< pre.length ; e++) {
-           add[e].addEventListener('click', ()=>{
+           add[e].addEventListener('mouseover', ()=>{
 console.log(e)
 sel[e].style.display='block'
+dur[e].style.bottom='20%'
 
-s1.addEventListener('click',()=>{
+s1[e].addEventListener('click',()=>{
     console.log(e);
     dur[e].innerText=day[e]+'hrs'
     pre[e].innerText='Last day '+ preday[e] +'hrs'
 })
-s2.addEventListener('click',()=>{
+s2[e].addEventListener('click',()=>{
     dur[e].innerText=week[e]+'hrs'
     pre[e].innerText='Last week '+ preweek[e]+'hrs'
 })
-s3.addEventListener('click',()=>{
+s3[e].addEventListener('click',()=>{
     dur[e].innerText=month[e]+'hrs'
     pre[e].innerText='Last month '+ premonth[e]+'hrs'
 })
            })
-        }
+        } 
+
+        for (let e = 0 ; e< pre.length ; e++) {
+            add[e].addEventListener('mouseout', ()=>{
+ console.log(e)
+ sel[e].style.display='none'
+ dur[e].style.bottom='0%'})}
